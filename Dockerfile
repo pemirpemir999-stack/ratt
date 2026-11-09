@@ -1,13 +1,15 @@
-FROM node:20-alpine
+FROM node:22-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
 
+COPY client/package*.json ./client/
+RUN npm install --prefix client
+
 COPY . .
 
-RUN npm install --prefix client
 RUN npm run build
 
 EXPOSE 3000
