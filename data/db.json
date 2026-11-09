@@ -1,0 +1,319 @@
+{
+  "storeSettings": {
+    "storeName": "Flexora",
+    "slug": "magazam",
+    "slogan": "7/24 Otomatik Doğrulama Kodu & Hesap Teslimatı",
+    "tabTitle": "Flexora | Anında Doğrulama & Hesap Teslimatı",
+    "faviconUrl": "",
+    "logoUrl": "",
+    "bannerUrl": "",
+    "themeColor": "cyan",
+    "announcement": "🔥 Flexora sistemine hoş geldiniz! Keyinizi girerek anında kodunuzu veya hesap bilgilerinizi alabilirsiniz.",
+    "customDomain": "",
+    "showGameShowcase": true,
+    "customCss": ""
+  },
+  "license": {
+    "licenseKey": "ZG-PRO-30D-62P94",
+    "plan": "Pro Mağaza Lisansı (1 Ay)",
+    "isActive": true,
+    "activatedAt": "2026-11-09T20:23:37.675Z",
+    "expiresAt": "2027-08-31T22:06:56.664Z",
+    "history": [
+      {
+        "code": "ZG-PRO-30D-62P94",
+        "activatedAt": "2026-11-09T20:23:37.675Z",
+        "addedDays": 30
+      },
+      {
+        "code": "ZG-PRO-30D-TKM5A",
+        "activatedAt": "2026-11-09T20:23:36.546Z",
+        "addedDays": 30
+      },
+      {
+        "code": "ZG-PRO-30D-T2WT3",
+        "activatedAt": "2026-11-09T20:23:33.072Z",
+        "addedDays": 30
+      },
+      {
+        "code": "ZG-PRO-30D-QMTUF",
+        "activatedAt": "2026-11-09T20:23:31.988Z",
+        "addedDays": 30
+      },
+      {
+        "code": "ZG-PRO-30D-J03D2",
+        "activatedAt": "2026-11-09T20:23:31.377Z",
+        "addedDays": 30
+      },
+      {
+        "code": "ZG-PRO-30D-ADCH1",
+        "activatedAt": "2026-11-09T20:23:30.197Z",
+        "addedDays": 30
+      },
+      {
+        "code": "ZG-PRO-30D-AK4G3",
+        "activatedAt": "2026-11-09T20:23:29.332Z",
+        "addedDays": 30
+      },
+      {
+        "code": "ZG-PRO-30D-LUWQY",
+        "activatedAt": "2026-11-09T20:23:26.576Z",
+        "addedDays": 30
+      },
+      {
+        "code": "ZG-TEST-KEY-12345678",
+        "activatedAt": "2026-11-04T22:15:05.052Z",
+        "addedDays": 30
+      },
+      {
+        "code": "ZG-PRO-DEMO-30DAYS-VALID",
+        "activatedAt": "2026-11-04T22:06:56.664Z",
+        "addedDays": 30
+      }
+    ]
+  },
+  "admin": {
+    "username": "flexora999",
+    "passwordHash": "$2b$10$qIL9VkhtMQ2gzzEbyFC45OH9xpyiKNAdsGOLXzEqMOMwLsUkJNpOq",
+    "lastLogin": null
+  },
+  "accounts": [
+    {
+      "id": "acc-cod-mw4-exnor",
+      "name": "Call of Duty Modern Warfare 4 - Steam",
+      "platform": "steam",
+      "deliveryType": "info_and_code",
+      "credentials": {
+        "username": "unseenelder",
+        "password": "HesapSepetimMW4pp",
+        "extraNotes": "Steam girişte \"Beni Hatırla\" seçeneğini işaretlemeyi unutmayınız."
+      },
+      "authType": "exnor",
+      "exnorKey": "3ES16-WQHP8-YZ5JJ",
+      "exnorHost": "https://exnor.com.tr",
+      "imapConfig": {
+        "host": "imap.gmail.com",
+        "port": 993,
+        "secure": true,
+        "user": "",
+        "pass": "",
+        "mailbox": "INBOX"
+      },
+      "totpSecret": "",
+      "isActive": true,
+      "createdAt": "2026-11-09T20:36:00.033Z"
+    }
+  ],
+  "games": [
+    {
+      "id": "game-cod-mw4",
+      "title": "Call of Duty: Modern Warfare 4",
+      "coverUrl": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+      "category": "Aksiyon / FPS",
+      "platform": "Steam",
+      "description": "Efsanevi Modern Warfare serisi, tam Steam erişimi ve anlık Steam Guard canlı kod teslimatı.",
+      "accountId": "acc-cod-mw4-exnor",
+      "featured": true,
+      "createdAt": "2026-11-09T20:36:00.035Z"
+    },
+    {
+      "id": "game-1",
+      "title": "Grand Theft Auto V: Premium Edition",
+      "coverUrl": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+      "category": "Aksiyon / Açık Dünya",
+      "platform": "Steam",
+      "description": "Rockstar Games klasiği, Los Santos macerası ve online erişim.",
+      "accountId": "acc-steam-demo",
+      "featured": true,
+      "createdAt": "2026-11-04T22:06:56.664Z"
+    },
+    {
+      "id": "game-2",
+      "title": "Cyberpunk 2077: Phantom Liberty",
+      "coverUrl": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80",
+      "category": "RPG / Bilim Kurgu",
+      "platform": "Steam",
+      "description": "Night City sokaklarında geleceğin efsanesi olun.",
+      "accountId": "acc-steam-demo",
+      "featured": true,
+      "createdAt": "2026-11-04T22:06:56.664Z"
+    },
+    {
+      "id": "game-3",
+      "title": "Red Dead Redemption 2",
+      "coverUrl": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
+      "category": "Vahşi Batı / Macera",
+      "platform": "Steam",
+      "description": "Arthur Morgan ve Van der Linde çetesiyle destansı bir yolculuk.",
+      "accountId": "acc-steam-demo",
+      "featured": true,
+      "createdAt": "2026-11-04T22:06:56.664Z"
+    },
+    {
+      "id": "game-4",
+      "title": "Elden Ring - Shadow of the Erdtree",
+      "coverUrl": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80",
+      "category": "Souls-like / RPG",
+      "platform": "Steam",
+      "description": "FromSoftware başyapıtı, Yılın Oyunu.",
+      "accountId": "acc-steam-demo",
+      "featured": false,
+      "createdAt": "2026-11-04T22:06:56.664Z"
+    }
+  ],
+  "packages": [
+    {
+      "id": "pkg-steam-triple",
+      "name": "Steam Efsane Paket (İstediğin 2 Oyunu Seç)",
+      "description": "Aşağıdaki 4 popüler oyundan dilediğiniz 2 tanesini seçip anında hesap ve kod erişimi kazanın.",
+      "selectableGameCount": 2,
+      "gameIds": [
+        "game-1",
+        "game-2",
+        "game-3",
+        "game-4"
+      ],
+      "subPackageIds": [],
+      "createdAt": "2026-11-04T22:06:56.664Z"
+    }
+  ],
+  "keys": [
+    {
+      "id": "key-exnor-direct",
+      "keyCode": "3ES16-WQHP8-YZ5JJ",
+      "accountId": "acc-cod-mw4-exnor",
+      "packageId": null,
+      "deliveryType": "info_and_code",
+      "burnOnView": false,
+      "maxUses": 100,
+      "usedCount": 1,
+      "cooldownSeconds": 10,
+      "lastUsedAt": "2026-11-09T20:38:08.081Z",
+      "expiresAt": null,
+      "validityDays": 60,
+      "firstUsedAt": "2026-11-09T20:38:08.081Z",
+      "selectedGames": [],
+      "isViewed": false,
+      "notes": "Call of Duty MW4 - Exnor Köprü Keyi",
+      "createdAt": "2026-11-09T20:36:00.035Z"
+    },
+    {
+      "id": "key-flexora-cod",
+      "keyCode": "FLX-COD-MW4",
+      "accountId": "acc-cod-mw4-exnor",
+      "packageId": null,
+      "deliveryType": "info_and_code",
+      "burnOnView": false,
+      "maxUses": 100,
+      "usedCount": 0,
+      "cooldownSeconds": 10,
+      "lastUsedAt": null,
+      "expiresAt": null,
+      "validityDays": 60,
+      "firstUsedAt": null,
+      "selectedGames": [],
+      "isViewed": false,
+      "notes": "Call of Duty MW4 - Kolay Key",
+      "createdAt": "2026-11-09T20:36:00.035Z"
+    },
+    {
+      "id": "key-eyeS4ZcF",
+      "keyCode": "ZG-FCBC02LMYH",
+      "accountId": "acc-ra9HgiB_",
+      "packageId": null,
+      "deliveryType": "inherit",
+      "burnOnView": false,
+      "maxUses": 2,
+      "usedCount": 2,
+      "cooldownSeconds": 60,
+      "lastUsedAt": "2026-11-05T22:17:34.536Z",
+      "expiresAt": null,
+      "validityDays": 30,
+      "firstUsedAt": "2026-11-05T22:14:20.929Z",
+      "selectedGames": [],
+      "isViewed": false,
+      "notes": "",
+      "createdAt": "2026-11-05T22:14:10.287Z"
+    }
+  ],
+  "feedback": [],
+  "logs": [
+    {
+      "id": "log-mu2I2U5_",
+      "keyCode": "3ES16-WQHP8-YZ5JJ",
+      "platform": "steam",
+      "type": "code_fetch",
+      "success": true,
+      "code": "27W9Q",
+      "ip": "::1",
+      "timestamp": "2026-11-09T20:38:09.341Z",
+      "detail": "Call of Duty Modern Warfare 4 - Steam için kod teslim edildi (EXNOR)"
+    },
+    {
+      "id": "log-M_B7yl2F",
+      "keyCode": "ZG-FCBC02LMYH",
+      "platform": "steam",
+      "type": "code_fetch",
+      "success": true,
+      "code": "742039",
+      "ip": "::1",
+      "timestamp": "2026-11-05T22:17:34.537Z",
+      "detail": "Steam için kod teslim edildi (TOTP)"
+    },
+    {
+      "id": "log-6P1v7IIP",
+      "keyCode": "ZG-FCBC02LMYH",
+      "platform": "steam",
+      "type": "code_fetch",
+      "success": true,
+      "code": "907098",
+      "ip": "::1",
+      "timestamp": "2026-11-05T22:14:20.930Z",
+      "detail": "Steam için kod teslim edildi (TOTP)"
+    },
+    {
+      "id": "log-MTUYKLhr",
+      "keyCode": "ZG-3H7NNBBE80",
+      "platform": "google",
+      "type": "code_fetch",
+      "success": false,
+      "code": "",
+      "ip": "::1",
+      "timestamp": "2026-11-04T22:27:08.238Z",
+      "detail": "Mail kutusundan kod alınamadı: Command failed"
+    },
+    {
+      "id": "log-Re6Odg7u",
+      "keyCode": "ZG-3H7NNBBE80",
+      "platform": "google",
+      "type": "code_fetch",
+      "success": false,
+      "code": "",
+      "ip": "::1",
+      "timestamp": "2026-11-04T22:25:51.493Z",
+      "detail": "Mail kutusundan kod alınamadı: Command failed"
+    },
+    {
+      "id": "log-qievC0oC",
+      "keyCode": "TESTBULK-WQPJ-HFGC",
+      "platform": "steam",
+      "type": "code_fetch",
+      "success": true,
+      "code": "988920",
+      "ip": "::1",
+      "timestamp": "2026-11-04T22:19:35.030Z",
+      "detail": "Steam CS2 + Cyberpunk 2077 VIP için kod teslim edildi (TOTP)"
+    },
+    {
+      "id": "log-1",
+      "keyCode": "ZG-STEAM-DEMO-2026",
+      "platform": "steam",
+      "type": "code_fetch",
+      "success": true,
+      "code": "A9K2M",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-11-04T22:06:56.664Z",
+      "detail": "Steam Guard kodu başarıyla teslim edildi (2FA TOTP)"
+    }
+  ]
+}
