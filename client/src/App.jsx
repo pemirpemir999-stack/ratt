@@ -15,7 +15,6 @@ export default function App() {
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
 
-  // Sync route
   useEffect(() => {
     const handlePopState = () => setCurrentPath(window.location.pathname);
     window.addEventListener('popstate', handlePopState);
@@ -27,11 +26,9 @@ export default function App() {
     setCurrentPath(path);
   };
 
-  // Determine slug from URL: e.g. /store/magazam or default
   const isStoreRoute = currentPath.startsWith('/store/');
   const slugFromUrl = isStoreRoute ? currentPath.replace('/store/', '').split('/')[0] : '';
 
-  // Fetch Store Info
   useEffect(() => {
     api.getStoreInfo(slugFromUrl).then(res => {
       if (res?.store) {
@@ -59,7 +56,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
-      {/* Top Announcement Bar */}
       {store.announcement && !announcementDismissed && (
         <div className="bg-gradient-to-r from-indigo-900/80 via-purple-900/80 to-indigo-900/80 border-b border-indigo-500/20 py-2.5 px-4 text-center text-xs text-indigo-100 flex items-center justify-center gap-2 backdrop-blur-md">
           <Bell className="w-3.5 h-3.5 text-amber-400 shrink-0" />
@@ -73,7 +69,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Main Header / Navbar */}
       <header className="w-full max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="p-2.5 rounded-2xl bg-indigo-600 text-white shadow-xl shadow-indigo-600/30 flex items-center justify-center">
@@ -109,9 +104,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* Hero Section & Customer Portal */}
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-8 flex flex-col items-center">
-        {/* Hero titles */}
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
@@ -123,29 +116,25 @@ export default function App() {
           </h2>
 
           <p className="text-sm text-slate-400 leading-relaxed">
-            Steam, Netflix, ChatGPT, Epic Games ve 2FA Authenticator kodlarınızı satıcıyı beklemeden 7/24 anında kendiniz alın.
+            https://www.itemsatis.com/p/Flexora
           </p>
         </div>
 
-        {/* Customer Key Checker & Deliveries Component */}
         <CustomerPortal
           storeSettings={store}
           onOpenFeedback={() => setFeedbackOpen(true)}
         />
 
-        {/* Public Storefront Game Showcase */}
         {storeData?.games && storeData.games.length > 0 && (
           <GameShowcase games={storeData.games} />
         )}
       </main>
 
-      {/* Feedback Modal */}
       <FeedbackModal
         isOpen={feedbackOpen}
         onClose={() => setFeedbackOpen(false)}
       />
 
-      {/* Modern Sleek Footer */}
       <footer className="w-full border-t border-slate-800/80 bg-slate-950/80 backdrop-blur-md py-8 px-4 mt-16">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex items-center gap-2">
