@@ -68,5 +68,10 @@ app.listen(PORT, () => {
   console.log(`🚀 Sunucu Çalışıyor: http://localhost:${PORT}`);
   console.log(`🛒 Mağaza Portalı:   http://localhost:${PORT}/store/magazam`);
   console.log(`🔐 Yönetici Paneli:  http://localhost:${PORT}/admin`);
+  console.log(`💾 Veritabani:       ${db.getPath()}`);
+  if (process.env.RENDER && !String(db.getPath()).startsWith('/data')) {
+    console.warn(`⚠️  Render'da kalici disk yok. Keyler restartta silinir.`);
+    console.warn(`   Dashboard → Disks → Mount path: /data  |  Env: DATA_DIR=/data`);
+  }
   console.log(`===============================================`);
 });
