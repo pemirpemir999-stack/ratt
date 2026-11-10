@@ -204,7 +204,7 @@
       "packageId": null,
       "deliveryType": "info_and_code",
       "burnOnView": false,
-      "maxUses": 10,
+      "maxUses": 2,
       "usedCount": 0,
       "cooldownSeconds": 10,
       "lastUsedAt": null,
