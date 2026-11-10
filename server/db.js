@@ -2,7 +2,25 @@ const fs = require('fs');
 const path = require('path');
 const { nanoid } = require('nanoid');
 
-const DB_PATH = path.join(__dirname, '..', 'data', 'db.json');
+function resolveDbPath() {
+  if (process.env.DB_PATH) return process.env.DB_PATH;
+
+  // Render'da kalıcı disk varsayılanı /data. Dashboard'da Disk mount path'i /data olmalı.
+  const defaultDir = process.env.RENDER
+    ? '/data'
+    : path.join(__dirname, '..', 'data');
+  const dataDir = process.env.DATA_DIR || defaultDir;
+  return path.join(dataDir, 'db.json');
+}
+
+const DB_PATH = resolveDbPath();
+
+function ensureWritableDir(dir) {
+  fs.mkdirSync(dir, { recursive: true });
+  const probe = path.join(dir, '.write-test');
+  fs.writeFileSync(probe, 'ok');
+  fs.unlinkSync(probe);
+}
 
 // Default initial state
 const getInitialData = () => {
@@ -264,37 +282,86 @@ class Database {
   }
 
   init() {
+    const dir = path.dirname(DB_PATH);
     try {
-      if (fs.existsSync(DB_PATH)) {
-        const raw = fs.readFileSync(DB_PATH, 'utf-8');
+      ensureWritableDir(dir);
+    } catch (err) {
+      const fallbackDir = path.join(__dirname, '..', 'data');
+      console.error(`[DB] ${dir} yazilamiyor (${err.message}). Gecici klasore dusuluyor: ${fallbackDir}`);
+      console.error('[DB] Render kullanıyorsan Persistent Disk ekle ve DATA_DIR=/data yap. Yoksa keyler restartta silinir.');
+      try {
+        ensureWritableDir(fallbackDir);
+        // Keep using fallback path for this process
+        this._fallbackPath = path.join(fallbackDir, 'db.json');
+      } catch (fallbackErr) {
+        console.error('[DB] Fallback klasoru de yazilamiyor:', fallbackErr);
+      }
+    }
+
+    const filePath = this.getPath();
+    const bundled = path.join(__dirname, '..', 'data', 'db.json');
+    try {
+      if (!fs.existsSync(filePath) && fs.existsSync(bundled) && path.resolve(bundled) !== path.resolve(filePath)) {
+        fs.copyFileSync(bundled, filePath);
+        console.log(`[DB] Mevcut db.json kalici diske kopyalandi: ${filePath}`);
+      }
+      if (fs.existsSync(filePath)) {
+        const raw = fs.readFileSync(filePath, 'utf-8');
         this.data = JSON.parse(raw);
-        // Ensure all top-level keys exist in case of schema additions
         const initial = getInitialData();
         for (const key of Object.keys(initial)) {
           if (!this.data[key]) {
             this.data[key] = initial[key];
           }
         }
+        console.log(`[DB] Veritabani yuklendi: ${filePath} (key sayisi: ${this.data.keys?.length || 0})`);
       } else {
         this.data = getInitialData();
         this.save();
+        console.log(`[DB] Yeni veritabani olusturuldu: ${filePath}`);
       }
     } catch (err) {
-      console.error('Error initializing database, using fresh defaults:', err);
+      console.error('[DB] Okuma hatasi, mevcut dosya ezilmeyecek:', err.message);
+      const bak = filePath + '.bak';
+      if (fs.existsSync(bak)) {
+        try {
+          this.data = JSON.parse(fs.readFileSync(bak, 'utf-8'));
+          console.log('[DB] Yedekten yuklendi:', bak);
+          return;
+        } catch (bakErr) {
+          console.error('[DB] Yedek de okunamadi:', bakErr.message);
+        }
+      }
       this.data = getInitialData();
-      this.save();
     }
+  }
+
+  getPath() {
+    return this._fallbackPath || DB_PATH;
   }
 
   save() {
     try {
-      const dir = path.dirname(DB_PATH);
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+      const filePath = this.getPath();
+      const dir = path.dirname(filePath);
+      ensureWritableDir(dir);
+
+      const payload = JSON.stringify(this.data, null, 2);
+      const tmp = filePath + '.tmp';
+      fs.writeFileSync(tmp, payload, 'utf-8');
+      try {
+        fs.renameSync(tmp, filePath);
+      } catch {
+        fs.copyFileSync(tmp, filePath);
+        fs.unlinkSync(tmp);
       }
-      fs.writeFileSync(DB_PATH, JSON.stringify(this.data, null, 2), 'utf-8');
+      try {
+        fs.copyFileSync(filePath, filePath + '.bak');
+      } catch {
+        // yedek opsiyonel
+      }
     } catch (err) {
-      console.error('Failed to save database file:', err);
+      console.error('[DB] Kayit BASARISIZ — keyler restartta kaybolabilir:', err);
     }
   }
 
