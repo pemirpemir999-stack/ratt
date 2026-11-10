@@ -277,7 +277,7 @@ export default function CustomerPortal({ storeSettings, onOpenFeedback }) {
               <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Hızlı Test Keyleri:
             </span>
             {[
-              { label: 'Call of Duty MW4 (Exnor)', code: '3ES16-WQHP8-YZ5JJ' },
+              { label: 'Call of Duty MW4 (Exnor)', code: 'MAGAZAYA GİDİN' },
               { label: 'Steam Guard (2FA TOTP)', code: 'ZG-STEAM-DEMO-2026' },
               { label: 'Netflix 4K (Mail Kodlu)', code: 'ZG-NETFLIX-4K-PASS' },
               { label: 'Steam Çoklu Oyun Paketi', code: 'ZG-BUNDLE-SELECT-GAME' }
