@@ -89,7 +89,7 @@
         "extraNotes": "Steam girişte \"Beni Hatırla\" seçeneğini işaretlemeyi unutmayınız."
       },
       "authType": "exnor",
-      "exnorKey": "3ES16-WQHP8-YZ5JJ",
+      "exnorKey": "2VQUZ-2FU9R-QYH57",
       "exnorHost": "https://exnor.com.tr",
       "imapConfig": {
         "host": "imap.gmail.com",
@@ -180,12 +180,12 @@
   "keys": [
     {
       "id": "key-exnor-direct",
-      "keyCode": "3ES16-WQHP8-YZ5JJ",
+      "keyCode": "2VQUZ-2FU9R-QYH57",
       "accountId": "acc-cod-mw4-exnor",
       "packageId": null,
       "deliveryType": "info_and_code",
       "burnOnView": false,
-      "maxUses": 100,
+      "maxUses": 10,
       "usedCount": 1,
       "cooldownSeconds": 10,
       "lastUsedAt": "2026-11-09T20:38:08.081Z",
@@ -204,7 +204,7 @@
       "packageId": null,
       "deliveryType": "info_and_code",
       "burnOnView": false,
-      "maxUses": 100,
+      "maxUses": 10,
       "usedCount": 0,
       "cooldownSeconds": 10,
       "lastUsedAt": null,
